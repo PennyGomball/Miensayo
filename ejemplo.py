@@ -15,10 +15,10 @@ opcion = st.selectbox("elija",("yo","tu","el"))
 
 st.write("Tu seleccion :", opcion)
 
-if opcion == "yo:":
+if opcion == "yo":
 
 
     st.bar_chart(Misdatos,x="Nombre del Producto",y="Cantidad Vendida")
  
-if opcion == "tu:":
+if opcion == "tu":
     st.line_chart(Misdatos,x="Nombre del Producto",y="Cantidad Vendida")
