@@ -3,7 +3,7 @@ import pygwalker as pyg
 print("hola")
 
 # se asigna a variable mfile la ruta de mi archivo local en este entorno
-mfile = '/workspace/Miensayo/ventasejemplo.csv'
+mfile = 'ventasejemplo.csv'
 
 # Uso de la funcion read_csv para leer el archivo Misdatos seria una variable que contiene la matriz
 
