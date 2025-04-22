@@ -11,5 +11,9 @@ mfile = 'ventasejemplo.csv'
 # uso de 2 parametros separador
 Misdatos = pd.read_csv(mfile, sep=';')
 
+opcion = st.selectbox("elija",("yo","tu","el"))
+
+st.write("Tu seleccion :", opcion)
+
 pyg.walk(Misdatos)
  
