@@ -1,5 +1,5 @@
 import pandas as pd 
-import matplotlib.pyplot as plt
+import pygwalker as pyg
 print("hola")
 
 # se asigna a variable mfile la ruta de mi archivo local en este entorno
@@ -10,13 +10,5 @@ mfile = '/workspace/Miensayo/ventasejemplo.csv'
 # uso de 2 parametros separador
 Misdatos = pd.read_csv(mfile, sep=';')
 
-# Muestra los 5 primeros registros
-Misdatos.head(3)
-
-
-
-
-
-plt.bar(Misdatos["Nombre del Producto"],Misdatos["Cantidad Vendida"])
-plt.show()
+pyg.walk(Misdatos)
  
