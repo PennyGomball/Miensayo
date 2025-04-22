@@ -15,5 +15,10 @@ opcion = st.selectbox("elija",("yo","tu","el"))
 
 st.write("Tu seleccion :", opcion)
 
-pyg.walk(Misdatos)
+if opcion == "yo:":
+
+
+    st.bar_chart(Misdatos,x="Nombre del Producto",y="Cantidad Vendida")
  
+if opcion == "tu:":
+    st.line_chart(Misdatos,x="Nombre del Producto",y="Cantidad Vendida")
