@@ -1,5 +1,6 @@
 import pandas as pd 
 import pygwalker as pyg
+import streamlit as st
 print("hola")
 
 # se asigna a variable mfile la ruta de mi archivo local en este entorno
