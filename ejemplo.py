@@ -11,7 +11,7 @@ mfile = 'ventasejemplo.csv'
 # uso de 2 parametros separador
 Misdatos = pd.read_csv(mfile, sep=';')
 
-opcion = st.selectbox("elija",("Grafico de barras","Grafico de areas","el"))
+opcion = st.selectbox("elija",("Grafico de barras","Grafico de areas","Leer"))
 
 st.write("Tu seleccion :", opcion)
 
@@ -22,3 +22,6 @@ if opcion == "Grafico de barras":
  
 if opcion == "Grafico de areas":
     st.area_chart(Misdatos,x="Nombre del Producto",y="Cantidad Vendida")
+if opcion == "Leer":
+    pyg.walk(Misdatos)
+    
