@@ -11,14 +11,14 @@ mfile = 'ventasejemplo.csv'
 # uso de 2 parametros separador
 Misdatos = pd.read_csv(mfile, sep=';')
 
-opcion = st.selectbox("elija",("yo","tu","el"))
+opcion = st.selectbox("elija",("Grafico de barras","Grafico de areas","el"))
 
 st.write("Tu seleccion :", opcion)
 
-if opcion == "yo":
+if opcion == "Grafico de barras":
 
 
     st.bar_chart(Misdatos,x="Nombre del Producto",y="Cantidad Vendida")
  
-if opcion == "tu":
+if opcion == "Grafico de areas":
     st.area_chart(Misdatos,x="Nombre del Producto",y="Cantidad Vendida")
