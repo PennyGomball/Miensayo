@@ -27,5 +27,5 @@ if opcion == "Grafico de areas":
 if opcion == "Leer":
     #pyg_app = StreamlitRenderer(mfile)
     #pyg_app.explorer()
-     pyg.walk(Mfile,env="streamlit")
+     pyg.walk(mfile,env="streamlit")
 
