@@ -1,6 +1,8 @@
+from pygwalker.api.streamlit import StreamlitRenderer 
 import pandas as pd 
 import pygwalker as pyg
 import streamlit as st
+
 print("hola")
 
 # se asigna a variable mfile la ruta de mi archivo local en este entorno
@@ -23,5 +25,7 @@ if opcion == "Grafico de barras":
 if opcion == "Grafico de areas":
     st.area_chart(Misdatos,x="Nombre del Producto",y="Cantidad Vendida")
 if opcion == "Leer":
-    pyg.walk(mfile)
+    pyg_app = streamlitrenderer(mfile)
+    pyg_app.explorer()
+
 
