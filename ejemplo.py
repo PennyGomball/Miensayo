@@ -23,5 +23,5 @@ if opcion == "Grafico de barras":
 if opcion == "Grafico de areas":
     st.area_chart(Misdatos,x="Nombre del Producto",y="Cantidad Vendida")
 if opcion == "Leer":
-    pyg.walk(mfile)
+    st.pyg.walk(mfile)
 
