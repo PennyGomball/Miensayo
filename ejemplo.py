@@ -25,7 +25,7 @@ if opcion == "Grafico de barras":
 if opcion == "Grafico de areas":
     st.area_chart(Misdatos,x="Nombre del Producto",y="Cantidad Vendida")
 if opcion == "Leer":
-    pyg_app = streamlitRenderer(mfile)
+    pyg_app = StreamlitRenderer(mfile)
     pyg_app.explorer()
 
 
