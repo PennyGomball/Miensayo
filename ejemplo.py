@@ -9,7 +9,7 @@ col1.header("Subir archivo de trabajo formato csv")
 
 
 # se asigna a variable mfile archivo seleccionado
-mfile1= col1.file_uploader("Subir Archivo",type="csv")
+mfile1= col1.file_uploader("Subir Archivo")
 
 if mfile1 is not None:
     # Leer archivo como BYTES
