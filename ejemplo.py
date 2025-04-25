@@ -3,48 +3,29 @@ import pandas as pd
 import streamlit as st
 from io import StringIO
 
-col1,col2 = st.columns(2)
+uploaded_file = st.file_uploader("Choose a file")
+if uploaded_file is not None:
+    # To read file as bytes:
+    bytes_data = uploaded_file.getvalue()
+    #st.write(bytes_data)
 
-col1.header("Subir archivo de trabajo formato csv")
+    # To convert to a string based IO:
+    stringio = StringIO(uploaded_file.getvalue().decode("utf-8"))
+    #st.write(stringio)
 
+    # To read file as string:
+    string_data = stringio.read()
+    #st.write(string_data)
 
-# se asigna a variable mfile archivo seleccionado
-mfile1= col1.file_uploader("Subir Archivo")
+    # Can be used wherever a "file-like" object is accepted:
+    dataframe = pd.read_csv(uploaded_file,sep=";")
+    st.data_editor(dataframe)
 
-if mfile1 is not None:
-    # Leer archivo como BYTES
-    bytes_data = mfile1.getvalue()
-    st.write(bytes_data)
-
-    # Convertir a String basado en  IO:
-    stringio = StringIO(mfile1.getvalue().decode("utf-8"))
-    st.write(stringio)
-
-# Uso de la funcion read_csv para leer el archivo Misdatos seria una variable que contiene la matriz
-Misdatos = pd.read_csv(mfile1, sep=';')
-
-st.dataframe(Misdatos)
-#uso de 2 parametros separador
-
-
-#La variable opcion toma el valor de la eleccion
-#opcion = st.selectbox("Seleccione opción para procesar los datos:",("Grafico de barras","Grafico de areas","Leer"))
-
-# Texto enviado por pantalla para mostrar la eleccion en forma de variable
-#st.write("Tu seleccion :", opcion)
-
-# Estructura de decisión segun opcion elegida 
-#if opcion == "Grafico de barras":
-
-
-    #st.bar_chart(Misdatos,x="Nombre del Producto",y="Cantidad Vendida")
- 
-#if opcion == "Grafico de areas":
-    #st.area_chart(Misdatos,x="Nombre del Producto",y="Cantidad Vendida")
-#if opcion == "Leer":
-
-    # la funcion st.data necesita como parametro un argumento de pd, para este caso
-    # es el dataframe asigando a la variable Misdatos
-   # st.dataframe(Misdatos)
-
-
+    mdf=pd.DataFrame(dataframe)
+    nom_colum=mdf.columns
+    numero_col=mdf.shape[1]
+    print(list(nom_colum))
+    print(numero_col)
+    
+    mi_eleccionX=st.pills("Elija las variables :", nom_colum, selection_mode="multi")
+    st.markdown(f"Sus variables seleccionadas: {mi_eleccionX}.")
