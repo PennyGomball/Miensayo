@@ -1,4 +1,5 @@
 # Importo librerias necesarias
+from pygwalker.api.streamlit import StreamlitRenderer
 import pandas as pd 
 import streamlit as st
 from io import StringIO
@@ -19,7 +20,8 @@ if uploaded_file is not None:
 
     # Can be used wherever a "file-like" object is accepted:
     dataframe = pd.read_csv(uploaded_file,sep=";")
-    st.data_editor(dataframe)
+    pyg_app = StreamlitRenderer(dataframe)
+    pyg_app.explorer()
 
     mdf=pd.DataFrame(dataframe)
     nom_colum=mdf.columns
