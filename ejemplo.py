@@ -23,11 +23,11 @@ if uploaded_file is not None:
     pyg_app = StreamlitRenderer(dataframe)
     pyg_app.explorer()
 
-    mdf=pd.DataFrame(dataframe)
-    nom_colum=mdf.columns
-    numero_col=mdf.shape[1]
-    print(list(nom_colum))
-    print(numero_col)
+    #mdf=pd.DataFrame(dataframe)
+    #nom_colum=mdf.columns
+    #numero_col=mdf.shape[1]
+    #print(list(nom_colum))
+    #print(numero_col)
     
-    mi_eleccionX=st.pills("Elija las variables :", nom_colum, selection_mode="multi")
-    st.markdown(f"Sus variables seleccionadas: {mi_eleccionX}.")
+    #mi_eleccionX=st.pills("Elija las variables :", nom_colum, selection_mode="multi")
+    #st.markdown(f"Sus variables seleccionadas: {mi_eleccionX}.")
