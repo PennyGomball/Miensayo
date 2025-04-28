@@ -20,8 +20,8 @@ if uploaded_file is not None:
 
     # Can be used wherever a "file-like" object is accepted:
     dataframe = pd.read_csv(uploaded_file,sep=";")
-    pyg_app = StreamlitRenderer(dataframe)
-    pyg_app.explorer()
+    datospyg = StreamlitRenderer(dataframe)
+    datospyg.explorer()
 
     #mdf=pd.DataFrame(dataframe)
     #nom_colum=mdf.columns
