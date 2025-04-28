@@ -8,10 +8,10 @@ st.set_page_config(
     layout="wide"
 )
 # Import your data
-df=pd.read_csv('/workspace/Miensayo/ventasejemplo.csv',sep=";")
+dataf=pd.read_csv('/workspace/Miensayo/ventasejemplo.csv',sep=";")
 
 
  
-pyg_app = StreamlitRenderer(df)
+pyg_app = StreamlitRenderer(dataf)
  
 pyg_app.explorer()
