@@ -6,6 +6,8 @@ import pandas as pd
 import streamlit as st
 from io import StringIO
 
+# defino laa columnas
+ 
 uploaded_file = st.file_uploader("Choose a file")
 if uploaded_file is not None:
     # To read file as bytes:
@@ -22,14 +24,14 @@ if uploaded_file is not None:
 
     # Can be used wherever a "file-like" object is accepted:
     dataframe = pd.read_csv(uploaded_file,sep=";")
-    #datospyg = StreamlitRenderer(dataframe)
-    pyg.walk(dataframe)
+    datospyg = StreamlitRenderer(dataframe,appearance="dark")
+    pyg.walk(dataframe,appearance="dark")
 
-    mdf=pd.DataFrame(dataframe)
-    nom_colum=mdf.columns
-    numero_col=mdf.shape[1]
+    #mdf=pd.DataFrame(dataframe)
+    #nom_colum=mdf.columns
+    #numero_col=mdf.shape[1]
     #print(list(nom_colum))
     #print(numero_col)
     
-    mi_eleccionX=st.pills("Elija las variables :", nom_colum, selection_mode="multi")
-    st.markdown(f"Sus variables seleccionadas: {mi_eleccionX}.")
+    #mi_eleccionX=st.pills("Elija las variables :", nom_colum, selection_mode="multi")
+    #st.markdown(f"Sus variables seleccionadas: {mi_eleccionX}.")
