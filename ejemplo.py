@@ -7,8 +7,12 @@ import streamlit as st
 from io import StringIO
 
 # defino laa columnas
- 
-uploaded_file = st.file_uploader("Choose a file")
+col1,col2=st.columns([0.7,0.3])
+
+with col1:
+    col1.write("Esto ")
+    # Subir archivo selecccionando de carpetas en formato csv
+    uploaded_file = st.file_uploader("Choose a file")
 if uploaded_file is not None:
     # To read file as bytes:
     bytes_data = uploaded_file.getvalue()
