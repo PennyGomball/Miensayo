@@ -1,8 +1,0 @@
-# Comentario en TOML
-
-titulo = "Mi configuración"
-
-[usuario]
-
-usuario = "Salvador"
-correo = "salvador.diaz@usach.cl"
